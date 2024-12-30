@@ -52,8 +52,8 @@ const data = {
       icon: House,
     },
     {
-      title: "Bandar Detector",
-      url: "/bandar-detector",
+      title: "Broker",
+      url: "/broker",
       icon: VenetianMask,
     },
   ],
