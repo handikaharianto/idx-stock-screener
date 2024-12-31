@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 export function formatNumber(value: number): string {
   const sign = value < 0 ? "-" : "";
   const absValue = Math.abs(value);
@@ -25,4 +27,8 @@ export function capitalizeWords(input: string): string {
     .split("_")
     .map((word) => capitalize(word))
     .join(" ");
+}
+
+export function formatDate(date: string): string {
+  return format(new Date(date), "MMM dd, yyyy");
 }

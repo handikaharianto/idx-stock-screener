@@ -6,6 +6,7 @@ import PeriodFilter from "@/components/broker/period-filter";
 import MarketTypeFilter from "@/components/broker/market-type-filter";
 import ColumnFilter from "@/components/common/column-filter";
 import BrokerTable from "@/components/broker/broker-table";
+import { formatDate } from "@/lib/formats";
 
 export default function Page() {
   const [brokers, setBrokers] = useState<Broker[]>([]);
@@ -43,7 +44,9 @@ export default function Page() {
     const data = await response.json();
 
     setBrokers(data.data.list);
-    setDate(`${data.data.date.from} - ${data.data.date.to}`);
+    setDate(
+      `${formatDate(data.data.date.from)} - ${formatDate(data.data.date.to)}`,
+    );
   };
 
   const handlePeriodChange = (value: BrokerPeriod) => {
