@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Broker, BrokerPeriod, MarketType } from "@/types/broker";
+import { TopBroker, BrokerPeriod, MarketType } from "@/types/broker";
 import PeriodFilter from "@/components/broker/period-filter";
 import MarketTypeFilter from "@/components/broker/market-type-filter";
 import ColumnFilter from "@/components/common/column-filter";
@@ -9,7 +9,7 @@ import BrokerTable from "@/components/broker/broker-table";
 import { formatDate } from "@/lib/formats";
 
 export default function Page() {
-  const [brokers, setBrokers] = useState<Broker[]>([]);
+  const [brokers, setBrokers] = useState<TopBroker[]>([]);
 
   // filter states
   const [marketType, setMarketType] = useState<MarketType>(

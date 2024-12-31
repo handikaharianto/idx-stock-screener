@@ -21,10 +21,10 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 
-import { Broker, BrokerGroup } from "@/types/broker";
+import { TopBroker, BrokerGroup } from "@/types/broker";
 import { formatNumber } from "@/lib/formats";
 
-export const columns: ColumnDef<Broker>[] = [
+export const columns: ColumnDef<TopBroker>[] = [
   {
     accessorKey: "code",
     header: () => <div className="font-bold text-zinc-800">Code</div>,
@@ -132,7 +132,7 @@ export const columns: ColumnDef<Broker>[] = [
 ];
 
 type BrokerTableProps = {
-  data: Broker[];
+  data: TopBroker[];
 };
 
 export default function BrokerTable({ data }: BrokerTableProps) {

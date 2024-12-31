@@ -1,4 +1,4 @@
-export type Broker = {
+export type TopBroker = {
   code: string;
   name: string;
   investor_type: string;
