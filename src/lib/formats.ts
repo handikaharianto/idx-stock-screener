@@ -29,6 +29,6 @@ export function capitalizeWords(input: string): string {
     .join(" ");
 }
 
-export function formatDate(date: string): string {
-  return format(new Date(date), "MMM dd, yyyy");
+export function formatDate(date: string, dateFormat: string): string {
+  return format(new Date(date), dateFormat);
 }

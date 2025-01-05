@@ -45,7 +45,7 @@ export default function Page() {
 
     setBrokers(data.data.list);
     setDate(
-      `${formatDate(data.data.date.from)} - ${formatDate(data.data.date.to)}`,
+      `${formatDate(data.data.date.from, "MMM dd, yyyy")} - ${formatDate(data.data.date.to, "MMM dd, yyyy")}`,
     );
   };
 
