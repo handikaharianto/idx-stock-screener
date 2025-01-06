@@ -53,8 +53,19 @@ const data = {
     },
     {
       title: "Broker",
-      url: "/broker",
+      url: "#",
       icon: VenetianMask,
+      isActive: true,
+      items: [
+        {
+          title: "Top Broker",
+          url: "/broker",
+        },
+        {
+          title: "Broker Activity",
+          url: "/broker/activity",
+        },
+      ],
     },
   ],
 };
