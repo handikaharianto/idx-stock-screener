@@ -21,8 +21,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 
-// This is sample data.
-const data = {
+export const data = {
   user: {
     name: "shadcn",
     email: "m@example.com",
