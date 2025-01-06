@@ -248,45 +248,51 @@ export default function Page() {
   }
 
   return (
-    <main>
-      <BrokerActivityFilter
-        data={brokers}
-        selectedBroker={selectedBroker}
-        handleSelectedBroker={handleSelectedBroker}
-      />
-      <BrokerActivityDatePicker
-        date={date?.from}
-        handleDateChange={(date) =>
-          setDate((prevState) =>
-            prevState
-              ? { ...prevState, from: date }
-              : { from: date, to: dateToday },
-          )
-        }
-      />
-      <BrokerActivityDatePicker
-        date={date?.to}
-        handleDateChange={(date) =>
-          setDate((prevState) =>
-            prevState
-              ? { ...prevState, to: date }
-              : { from: dateToday, to: date },
-          )
-        }
-      />
-      <BrokerActivityInvestorFilter
-        investorType={investorType}
-        handleInvestorType={handleInvestorType}
-      />
-      <BrokerActivityMarketFilter
-        marketType={marketType}
-        handlemarketType={handlemarketType}
-      />
-      <BrokerActivityTransactionFilter
-        transactionType={transactionType}
-        handleTransactionType={handleTransactionType}
-      />
-      <div className="flex gap-x-4">
+    <main className="space-y-8">
+      <div className="space-y-2">
+        <BrokerActivityFilter
+          data={brokers}
+          selectedBroker={selectedBroker}
+          handleSelectedBroker={handleSelectedBroker}
+        />
+        <div className="flex gap-x-2">
+          <BrokerActivityDatePicker
+            date={date?.from}
+            handleDateChange={(date) =>
+              setDate((prevState) =>
+                prevState
+                  ? { ...prevState, from: date }
+                  : { from: date, to: dateToday },
+              )
+            }
+          />
+          <BrokerActivityDatePicker
+            date={date?.to}
+            handleDateChange={(date) =>
+              setDate((prevState) =>
+                prevState
+                  ? { ...prevState, to: date }
+                  : { from: dateToday, to: date },
+              )
+            }
+          />
+        </div>
+        <div className="flex gap-x-2">
+          <BrokerActivityInvestorFilter
+            investorType={investorType}
+            handleInvestorType={handleInvestorType}
+          />
+          <BrokerActivityMarketFilter
+            marketType={marketType}
+            handlemarketType={handlemarketType}
+          />
+          <BrokerActivityTransactionFilter
+            transactionType={transactionType}
+            handleTransactionType={handleTransactionType}
+          />
+        </div>
+      </div>
+      <div className="flex gap-x-2">
         <BrokerActivityTable
           columns={buyerColumns}
           data={brokersActivity.buy}
